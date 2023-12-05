@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                   git 'https://github.com/gitjwala/Terraform_Lab.git'
+                   git 'https://github.com/gitjwala/Intigratewithjenkins.git'
                        }
                 }
             
