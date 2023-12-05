@@ -17,14 +17,15 @@ pipeline {
         }
         stage('plan') {
             steps {
-                 bat  'terrafrom init'
-                 bat 'terrafrom plan'
-             
+                script{
+                 sh 'terrafrom init'
+                 sh 'terrafrom plan'
+                }
                 }
             }
         stage('Apply') {
             steps {
-                 bat 'terrafrom apply --auto-approve'
+                 sh 'terrafrom apply --auto-approve'
                 }
             }
     }
