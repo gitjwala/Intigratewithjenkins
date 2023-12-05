@@ -4,6 +4,9 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
     agent any
+    tools {
+        terraform 'Terraform'
+    }    
     stages {
         stage('checkout') {
             steps {
