@@ -10,22 +10,22 @@ pipeline {
                 script{
                        dir('terrafrom')
                        {
-                          git "https://github.com/gitjwala/Intigratewithjenkins.git"
+                          git 'https://github.com/gitjwala/Intigratewithjenkins.git'
                        }
                 }
             }
         }
         stage('plan') {
             steps {
-                script{
-                 sh 'terrafrom init'
-                 sh 'terrafrom plan'
-                }
+             
+                 bat 'terrafrom init'
+                 bat 'terrafrom plan'
+                
                 }
             }
         stage('Apply') {
             steps {
-                 sh 'terrafrom apply --auto-approve'
+                 bat 'terrafrom apply --auto-approve'
                 }
             }
     }
