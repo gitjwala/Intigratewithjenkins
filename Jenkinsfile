@@ -3,7 +3,9 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID') 
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
-    agent any
+    agent { 
+    label 'linux'
+}
     stages {
         stage('checkout') {
             steps {
@@ -17,14 +19,14 @@ pipeline {
         stage('plan') {
             steps {
              
-                 bat 'terraform init'
-                 bat 'terraform plan'
+                 sh 'terraform init'
+                 sh 'terraform plan'
                 
                 }
             }
         stage('Apply') {
             steps {
-                 bat 'terraform apply --auto-approve'
+                 sh 'terraform apply --auto-approve'
                 }
             }
     }
