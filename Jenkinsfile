@@ -8,10 +8,9 @@ pipeline {
         stage('checkout') {
             steps {
                 script{
-                       dir('terrafrom')
-                       {
+                       
                           git 'https://github.com/gitjwala/Intigratewithjenkins.git'
-                       }
+
                 }
             }
         }
