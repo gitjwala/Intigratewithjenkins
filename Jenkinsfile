@@ -18,14 +18,14 @@ pipeline {
         stage('plan') {
             steps {
              
-                 bat 'terrafrom init'
-                 bat 'terrafrom plan'
+                 bat 'terraform init'
+                 bat 'terraform plan'
                 
                 }
             }
         stage('Apply') {
             steps {
-                 bat 'terrafrom apply --auto-approve'
+                 bat 'terraform apply --auto-approve'
                 }
             }
     }
