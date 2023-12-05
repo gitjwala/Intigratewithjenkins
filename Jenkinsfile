@@ -8,7 +8,7 @@ pipeline {
         terraform 'Terraform'
     }    
     stages {
-        stage('checkout') {
+        stage('gitcheckout') {
             steps {
                 script{
                        
@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }
-        stage('plan') {
+        stage('Terraform Plan') {
             steps {
              
                  bat 'terraform init'
@@ -25,7 +25,7 @@ pipeline {
                 
                 }
             }
-        stage('Apply') {
+        stage('Terraform Apply') {
             steps {
                  bat 'terraform apply --auto-approve'
                 }
