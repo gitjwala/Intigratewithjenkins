@@ -17,14 +17,14 @@ pipeline {
         }
         stage('plan') {
             steps {
-                 sh "pwd;cd terrafrom/ ; terrafrom init"
-                 sh "pwd;cd terrafrom/ ; terrafrom plan"
+                 bat "cd terrafrom/ ; terrafrom init"
+                 bat "cd terrafrom/ ; terrafrom plan"
              
                 }
             }
         stage('Apply') {
             steps {
-                 sh "pwd;cd terrafrom/ ; terrafrom apply --auto-approve"
+                 bat "cd terrafrom/ ; terrafrom apply --auto-approve"
                 }
             }
     }
