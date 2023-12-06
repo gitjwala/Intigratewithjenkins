@@ -3,7 +3,7 @@ variable "instance_type" {
 }
 
 variable "iam" {
-  default = "t2.nano"   
+  default = "ami-089c26792dcb1fbd4"   
 }
 
 variable "sg_in_port" {
