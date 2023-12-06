@@ -3,11 +3,11 @@ variable "instance_type" {
 }
 
 variable "sg_in_port" {
-  type    = list(number)
+  //type    = list(number)
   default = [8080, 8081, 8082, 8083]
 }
 
 variable "sg_eg_port" {
-  type    = list(number)
+  //type    = list(number)
   default = [80, 443, 8443]
 }
