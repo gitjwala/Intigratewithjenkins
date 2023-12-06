@@ -1,20 +1,25 @@
-resource "aws_security_group" "ec2_sg" {
-  name        = "ec2_sg"
+resource "aws_security_group" "demo_sg" {
+  name        = "sample_sg"
   description = "Allow TLS inbound traffic"
-
-  ingress {
-    description      = "HTTPS inbount popt"
-    from_port        = var.sg_in_port
-    to_port          = var.sg_in_port
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+  dynamic "ingress" {
+    for_each = var.sg_in_port
+    content {
+      description = "TLS from VPC"
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
 
-  egress {
-    description      = "HTTP outbound Port"
-    from_port        = var.sg_eg_port
-    to_port          = var.sg_eg_port
-    protocol         = "tcp"
+ dynamic "egress" {
+   for_each = var.sg_eg_port
+   content {
+    from_port        = egress.value
+    to_port          = egress.value
+    protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
   }
+ }
 }
