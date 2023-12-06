@@ -2,7 +2,7 @@ module "myec2" {
   source        = "./modules"
 }
 
-module "mysg" {
+/* module "mysg" {
   source        = "./modules"
-}
+}*/
 
