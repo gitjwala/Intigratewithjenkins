@@ -1,5 +1,5 @@
-resource "aws_security_group" "ec2_tls" {
-  name        = "ec2_tls"
+resource "aws_security_group" "ec2_sg" {
+  name        = "ec2_sg"
   description = "Allow TLS inbound traffic"
 
   ingress {
