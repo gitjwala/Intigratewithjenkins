@@ -1,12 +1,12 @@
 variable "instance_type" {
-type = "string"
+type = string
 }
 variable "ami" {
-type = "string"
+type = string
 }
 variable "sg_in_port" {
-type = "string"
+type = string
 }
 variable "sg_eg_port" {
-type = "string"
+type = string
 }
