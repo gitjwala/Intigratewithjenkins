@@ -1,4 +1,4 @@
 module "myec2" {
   source        = "./modules"
-  instance_type = var.instance_type
+  // instance_type = var.instance_type
 }
