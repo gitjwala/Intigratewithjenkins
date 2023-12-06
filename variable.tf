@@ -2,7 +2,7 @@ variable "instance_type" {
   default = "t2.nano"   
 }
 
-variable "iam" {
+variable "ami" {
   default = "ami-089c26792dcb1fbd4"   
 }
 
