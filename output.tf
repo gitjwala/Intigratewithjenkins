@@ -1,3 +1,3 @@
-output "publicip" {
-  value = "{aws_instance.myec2.public_ip}"
+output "public_ip" {
+  value = module.myec2.ip
 }
