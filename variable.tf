@@ -5,8 +5,8 @@ variable "ami" {
 type = string
 }
 variable "sg_in_port" {
-type = number
+sg_in_port = "80"
 }
 variable "sg_eg_port" {
-type = number
+sg_eg_port = "443"
 }
